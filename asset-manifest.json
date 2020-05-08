@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Finstapics/static/css/main.beee0264.chunk.css",
+    "main.js": "/Finstapics/static/js/main.9f3f7ea8.chunk.js",
+    "main.js.map": "/Finstapics/static/js/main.9f3f7ea8.chunk.js.map",
+    "runtime-main.js": "/Finstapics/static/js/runtime-main.68ac9c7c.js",
+    "runtime-main.js.map": "/Finstapics/static/js/runtime-main.68ac9c7c.js.map",
+    "static/css/2.036b41f9.chunk.css": "/Finstapics/static/css/2.036b41f9.chunk.css",
+    "static/js/2.7a400a68.chunk.js": "/Finstapics/static/js/2.7a400a68.chunk.js",
+    "static/js/2.7a400a68.chunk.js.map": "/Finstapics/static/js/2.7a400a68.chunk.js.map",
+    "index.html": "/Finstapics/index.html",
+    "precache-manifest.0c27b6859a67eca3484e5d62c2083d00.js": "/Finstapics/precache-manifest.0c27b6859a67eca3484e5d62c2083d00.js",
+    "service-worker.js": "/Finstapics/service-worker.js",
+    "static/css/2.036b41f9.chunk.css.map": "/Finstapics/static/css/2.036b41f9.chunk.css.map",
+    "static/css/main.beee0264.chunk.css.map": "/Finstapics/static/css/main.beee0264.chunk.css.map",
+    "static/js/2.7a400a68.chunk.js.LICENSE.txt": "/Finstapics/static/js/2.7a400a68.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.68ac9c7c.js",
+    "static/css/2.036b41f9.chunk.css",
+    "static/js/2.7a400a68.chunk.js",
+    "static/css/main.beee0264.chunk.css",
+    "static/js/main.9f3f7ea8.chunk.js"
+  ]
+}
