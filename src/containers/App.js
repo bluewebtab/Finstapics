@@ -1,53 +1,67 @@
 import  React, { Component } from 'react';
+import {connect} from 'react-redux'
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-import axios from 'axios';
+import ErrorBoundry from '../components/ErrorBoundry';
+import Header from '../components/Header';
 
-import 'tachyons';
+import {setSearchField, requestImages} from '../actions';
 
+   const mapStateToProps = state => {
+     return {
+       searchField: state.searchImages.searchField,
+       images: state.requestImages.images,
+       isPending: state.requestImages.isPending,
+       error: state.requestImages.error
+     }
+   }
+
+   const mapDispatchToProps = (dispatch) => {
+     return{
+      onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+      onRequestImages: () => dispatch(requestImages())
+     }
+   }
+
+   
     class App extends Component {
 
-      state = {
-        imgs: [],
-        searchfield: ''
-      }
+      
 
       componentDidMount() {
-        axios
-            .get(`https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_API_KEY}`)
-            .then(data => {
-                this.setState({ imgs: data.data });
-            })
-            .catch(err => {
-                console.log('Error happened during fetching!', err);
-            });
+       this.props.onRequestImages();
       }
 
-
+     
+     
       
-      onSearchChange = (event) => {
-        this.setState({searchfield: event.target.value})
-      }
+      
 
       render(){
-        //destructured this.state object in order to use it's properties conveniently
-        const {imgs, searchfield} = this.state;
-        //filter function is used filter the names in order to find an item
-        const filteredImages = imgs.filter(image => {
-        return image.user.first_name.toLowerCase().includes(searchfield.toLowerCase())
-
-        })
-         if(!imgs.length)
+        const { onSearchChange,images, searchField, isPending} = this.props;
+         console.log(images)
+        
+          //filter function is used filter the names in order to find an item
+         const filteredImages = images.filter(image => {
+          return image.user.first_name.toLowerCase().includes(searchField.toLowerCase())
+          
+          })
+        
+        
+         if(isPending)
          {
-            return <h1>Loadig</h1>
+            return <h1>Loading</h1>
+           
          }else{
            return (
           <div>
-            <h1 className="title">Finstapics</h1>
-              <SearchBox searchChange={this.onSearchChange}/>
+              <Header />
+              <SearchBox searchChange={onSearchChange}/>
               <Scroll>
-              <CardList data={filteredImages}/>
+              <ErrorBoundry>
+                <CardList data={filteredImages}/>
+              </ErrorBoundry>
               </Scroll>
           </div>
            )
@@ -58,7 +72,7 @@ import 'tachyons';
         
       }
       
-    
+
     }
 
-    export default App;
+    export default connect(mapStateToProps, mapDispatchToProps)(App);
