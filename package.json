@@ -14,7 +14,9 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "axios-action-creators": "^0.2.2",
+    "express": "^4.17.1",
     "gh-pages": "^2.2.0",
+    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -25,7 +27,7 @@
     "tachyons": "^4.12.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
