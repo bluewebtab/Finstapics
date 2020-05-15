@@ -7,8 +7,9 @@ const SearchBox = ({searchfield, searchChange}) => {
         <div className="container">
             <div className = 'pa2 search-box'>
                 <div className="content">
-                    <label>
+                    <label for="inputWords">
                     <input
+                        id="inputWords"
                         className="pa3"
                         type='search'
                         placeholder="search images"
