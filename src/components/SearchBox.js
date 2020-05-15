@@ -8,11 +8,11 @@ const SearchBox = ({searchfield, searchChange}) => {
             <div className = 'pa2 search-box'>
                 <div className="content">
                     <label for="inputWords">
+                        Search Images
                     <input
                         id="inputWords"
                         className="pa3"
                         type='search'
-                        placeholder="search images"
                         onChange={searchChange}
                     />
                     </label>
