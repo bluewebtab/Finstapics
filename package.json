@@ -1,6 +1,6 @@
 {
   "name": "friends-app",
-  "homepage": "https://bluewebtab.github.io/finstapics",
+  "homepage": "https://finstapics.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
