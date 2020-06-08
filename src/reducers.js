@@ -18,9 +18,8 @@ export const searchImages = (state=initialStateSearch, action = {}) => {
 }
 
 const initialStateImages = {
-    isPending: false,
-    images: [],
-    error: ''
+  images: [],
+  isPending: false
 }
 
 export const requestImages = (state=initialStateImages, action={}) => {
